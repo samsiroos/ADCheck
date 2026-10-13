@@ -138,3 +138,62 @@ dotnet run -- validate --identifier jdoe --target-password "user-password"
 ## LDAP settings
 
 The app reads `AD_*` environment variables from `.env` through Docker Compose. It can also read `Ldap` settings from `config/ldap.json`; override the file path with `AD_CONFIG_PATH` or `--config`. `AD_SERVER` may be a DNS name or an `ldap://`/`ldaps://` URL; `AD_PORT` is used as configured. AD `ForestDnsZones` and `DomainDnsZones` search referrals are skipped because they are separate application partitions, not user containers; other referrals are reported so the domain/DC configuration can be corrected without forwarding bind credentials automatically. Set `AD_USE_SSL=true` (or use an `ldaps://` host) to enable LDAPS. Do not use unencrypted LDAP across untrusted networks.
+
+
+## License
+
+ADChecker is licensed under the **Apache License, Version 2.0**.
+
+You are free to:
+
+- Use ADChecker for personal, educational, and commercial purposes.
+- Modify, fork, and redistribute the software.
+- Integrate ADChecker into proprietary or closed-source applications.
+- Distribute modified versions, subject to the license terms.
+
+When redistributing ADChecker or derivative works, you must comply with the Apache License, including its applicable copyright, license, attribution, and modification-notice requirements.
+
+Commercial use does not require separate permission from the author.
+
+See [LICENSE](LICENSE) and [NOTICE](NOTICE) for details.
+
+## Disclaimer and Responsible Use
+
+**IMPORTANT: USE AT YOUR OWN RISK.**
+
+ADChecker is provided **"AS IS"**, without warranties or conditions of any kind, to the maximum extent permitted by applicable law.
+
+ADChecker is intended for authorized Active Directory and OpenLDAP administration, diagnostics, development, and troubleshooting.
+
+Users are responsible for:
+
+- Obtaining appropriate authorization before accessing directory services.
+- Protecting LDAP credentials and authentication information.
+- Reviewing generated queries before executing them.
+- Securing CSV exports and other potentially sensitive directory data.
+- Ensuring compliance with applicable laws and organizational security policies.
+- Evaluating the software's suitability before using it in production environments.
+
+The author and contributors shall not be liable for damages, data loss, security incidents, service interruptions, or other consequences arising from the use or misuse of this software, to the maximum extent permitted by applicable law.
+
+This section supplements the warranty disclaimer and limitation of liability contained in the Apache License, Version 2.0.
+
+## Contributions
+
+Contributions, bug reports, and feature suggestions are welcome.
+
+You may freely fork and modify ADChecker under the terms of the Apache License, Version 2.0.
+
+However, changes submitted to the official repository must be reviewed and approved by the project maintainer before being merged.
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a Pull Request.
+
+## Author and Maintainer
+
+**Sam Siroos**
+
+- GitHub: https://github.com/samsiroos
+- Project: https://github.com/samsiroos/ADCheck
+- Website: https://pwaapps.com
+
+Copyright © 2026 Sam Siroos.

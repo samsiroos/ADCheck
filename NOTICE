@@ -1,0 +1,15 @@
+ADChecker
+Copyright 2026 Sam Siroos
+
+Project Repository:
+https://github.com/samsiroos/ADCheck
+
+ADChecker is an open-source command-line utility for Active Directory and OpenLDAP diagnostics, directory queries, LDAP query generation, and CSV export.
+
+Licensed under the Apache License, Version 2.0.
+
+This software may be used, modified, distributed, and incorporated into commercial or proprietary applications, subject to the terms of the Apache License, Version 2.0.
+
+Copyright and attribution notices must be preserved as required by the license.
+
+ADChecker is provided "AS IS", without warranties or conditions of any kind, as described in the LICENSE file.
