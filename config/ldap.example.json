@@ -1,0 +1,20 @@
+{
+  "Ldap": {
+    "Enabled": true,
+    "EmailDomain": "example.com",
+    "Host": "ldap://ldap.example.com",
+    "Port": 389,
+    "UseSsl": false,
+    "BaseDn": "dc=example,dc=com",
+    "BindDn": "cn=example-user,ou=ServiceAccounts,dc=example,dc=com",
+    "BindPassword": "example-password-not-for-production",
+    "UserIdAttribute": "sAMAccountName",
+    "EmailAttribute": "mail",
+    "NameAttribute": "displayName",
+    "CommonNameAttribute": "cn",
+    "UserObjectFilter": "(&(objectClass=user)(objectCategory=person))",
+    "UserSearchFilter": "(sAMAccountName={0})",
+    "GroupSearchFilter": "(&(objectClass=group)(cn={0}))",
+    "GroupMemberSearchFilter": "(&(objectClass=user)(objectCategory=person)(memberOf={0}))"
+  }
+}

@@ -1,0 +1,8 @@
+.git
+.vs
+.env
+bin
+obj
+config
+README.md
+*.tar

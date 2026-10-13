@@ -1,0 +1,19 @@
+services:
+  adchecker:
+    image: adchecker-cli:latest
+    container_name: ADchecker
+    working_dir: /app
+    command: ["host"]
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      AD_TARGET_PASSWORD: ${AD_TARGET_PASSWORD:-}
+    volumes:
+      - ./config:/app/config:ro
+      - type: bind
+        source: ${AD_EXPORT_HOST_PATH:-/etc/app/ADchecker/exports}
+        target: /output
+        read_only: false
+        bind:
+          create_host_path: false

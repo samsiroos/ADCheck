@@ -1,0 +1,17 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.log
+
+# Local secrets and environment overrides
+.env
+.env.*
+!.env.example
+/config/*.json
+!/config/*.example.json
+
+# Build and container artifacts
+*.tar
+*.tar.gz

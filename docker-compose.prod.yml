@@ -1,0 +1,38 @@
+services:
+  adchecker:
+    image: adchecker-cli:latest
+    container_name: ADchecker
+    pull_policy: never
+    working_dir: /app
+    command: ["host"]
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      AD_TARGET_PASSWORD: ${AD_TARGET_PASSWORD:-}
+    volumes:
+      - ./config:/app/config:ro
+      - type: bind
+        source: ${AD_EXPORT_HOST_PATH:-/etc/app/ADchecker/exports}
+        target: /output
+        read_only: false
+        bind:
+          create_host_path: false
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    init: true
+    pids_limit: 64
+    mem_limit: 256m
+    cpus: 0.5
+    healthcheck:
+      disable: true
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: "3"
